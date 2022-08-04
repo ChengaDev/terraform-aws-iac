@@ -1,0 +1,4 @@
+.spectral
+.terraform*
+*.json
+*.plan
