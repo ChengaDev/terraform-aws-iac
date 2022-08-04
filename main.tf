@@ -23,7 +23,7 @@ resource "aws_ami" "spec_ami" {
     snapshot_id = "snap-xxxxxxxx"
     volume_size = 8
     ### TFAWS007P ###
-    encrypted = true
+    # encrypted = true
   }
 }
 
