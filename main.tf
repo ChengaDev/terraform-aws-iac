@@ -61,16 +61,16 @@ resource "aws_s3_bucket" "spec_bucket" {
     }
     
   ## TFAWS274P ###
-  server_side_encryption_configuration {
-    rule {
-      apply_server_side_encryption_by_default {
-        sse_algorithm = "AES256"
-      }
-    }
-  }
+  # server_side_encryption_configuration {
+  #   rule {
+  #     apply_server_side_encryption_by_default {
+  #       sse_algorithm = "AES256"
+  #     }
+  #   }
+  # }
     
   ## TFAWS270P ###
-  versioning {
-    mfa_delete = true
-  }
+  # versioning {
+  #   mfa_delete = true
+  # }
 }
