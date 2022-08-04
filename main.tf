@@ -49,7 +49,7 @@ resource "aws_db_instance" "spec_db" {
   storage_encrypted = true
   ca_cert_identifier = "rds-ca-2019"
   ### TFAWS039P ###
-  auto_minor_version_upgrade = false
+  # auto_minor_version_upgrade = false
 }
 
 resource "aws_s3_bucket" "spec_bucket" {
@@ -61,17 +61,17 @@ resource "aws_s3_bucket" "spec_bucket" {
         Environment = "Dev"
     }
     
-  ### TFAWS274P ###
-  # server_side_encryption_configuration {
-  #   rule {
-  #     apply_server_side_encryption_by_default {
-  #       sse_algorithm = "AES256"
-  #     }
-  #   }
-  # }
+  ## TFAWS274P ###
+  server_side_encryption_configuration {
+    rule {
+      apply_server_side_encryption_by_default {
+        sse_algorithm = "AES256"
+      }
+    }
+  }
     
-  ### TFAWS270P ###
-  # versioning {
-  #   mfa_delete = true
-  # }
+  ## TFAWS270P ###
+  versioning {
+    mfa_delete = true
+  }
 }
