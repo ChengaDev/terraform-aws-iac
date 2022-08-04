@@ -23,7 +23,7 @@ resource "aws_ami" "spec_ami" {
     snapshot_id = "snap-xxxxxxxx"
     volume_size = 8
     ### TFAWS007P ###
-    # encrypted = true
+    encrypted = true
   }
 }
 
@@ -31,9 +31,9 @@ resource "aws_api_gateway_rest_api" "spec_api_gateway" {
   name = "regional-example"
 
   ### TFAWS016P ###
-  # endpoint_configuration {
-  #   types = ["PRIVATE"]
-  # }
+  endpoint_configuration {
+    types = ["PRIVATE"]
+  }
 }
 
 resource "aws_db_instance" "spec_db" {
