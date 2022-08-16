@@ -55,7 +55,7 @@ resource "aws_s3_bucket" "spec_bucket" {
   # }
     
   ### TFAWS270P ###
-  # versioning {
-  #   mfa_delete = true
-  # }
+  versioning {
+    mfa_delete = true
+  }
 }
